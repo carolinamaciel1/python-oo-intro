@@ -31,9 +31,17 @@ class Conta:
         self.__saldo += valor
         print("Você está depositando {} na conta de {}".format(valor, self.__titular))
 
-    def saca(self, valor):
-        self.__saldo -= valor
-        print("{} você está retindo {} de sua conta.".format(self.__titular, valor))
+    @staticmethod
+    def bancos():
+        return "001"
+
+    def __pode_sacar(self, valor):
+        return valor if valor <= self.__saldo else print("Não é possível sacar essa quantia.")
+
+    def __saca(self, valor):
+        if self.__pode_sacar(valor):
+            self.__saldo -= valor
+            print("{} você está retindo {} de sua conta.".format(self.__titular, valor))
 
     def transfere(self, valor, destino):
         self.saca(valor)
