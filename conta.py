@@ -8,6 +8,18 @@ class Conta:
         self.__saldo = saldo
         self.__limite = limite
 
+    def get_saldo(self):
+        return self.__saldo
+
+    def get_titular(self):
+        return self.__titular
+
+    def get_limite(self):
+        return self.__limite
+
+    def set_limite(self, novo_limite):
+        self.__limite = novo_limite
+
     def extrato(self):
         print("{} seu saldo é {}".format(self.__titular, self.__saldo))
 
