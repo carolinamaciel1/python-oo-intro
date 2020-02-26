@@ -12,7 +12,8 @@ class Conta:
     def saldo(self):
         return self.__saldo
 
-    def get_titular(self):
+    @property
+    def titular(self):
         return self.__titular
 
     @property
